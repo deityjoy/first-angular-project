@@ -9,14 +9,15 @@ export class FirstComponent implements OnInit {
 
   @Input() firstInput = "";
   @Output() firstOutput = new EventEmitter();
+  // toDisplay = true;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
   }
 
   appMethodFromFirst(){
-    this.firstOutput.emit();
+      this.firstOutput.emit();
+    // this.toDisplay = !this.toDisplay; 
   }
-
 }

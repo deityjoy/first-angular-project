@@ -16,7 +16,6 @@ export class ThirdComponent implements OnInit {
   }
 
   appMethodFromThird(){
-    this.thirdOutput.emit();
+    this.thirdOutput.emit('Third Component button clicked!');
   }
-
 }
