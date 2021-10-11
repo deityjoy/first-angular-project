@@ -1,35 +1,30 @@
 import { Component } from '@angular/core';
-import { ThirdComponent } from './third/third.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent {
-  title = 'first-angular-project';
+  title = 'TOMALON Angular Project';
 
-  appMessageToFirst = 'First Component button clicked!';
-  appMessageToThird = 'Third Component button clicked!';
-  toDisplay = true;
+  appMessageToFirst = "___________________________";
+  appMessageToThird = "___________________________";
 
-  appMethodFromFirst() {
-    
-    if (this.toDisplay) {
-      console.log(this.appMessageToFirst);
-      this.toDisplay = false;
-      this.toDisplay = !this.toDisplay;
-
-      // this.appMessageToFirst = '__________________________';
-       
-    }
-    // this.toDisplay = !this.toDisplay;
-    // else {
-    //   this.appMessageToFirst = '__________________________';
-    // }
-  } 
-
-  appMethodFromThird(event: any) {
-    alert(this.appMessageToThird);
+  // show first, hide third
+  appMethodFromFirst(event: any) {
+    // console.log(this.appMessageToFirst);
+    // console.log(this.appMessageToThird);
+    this.appMessageToThird = event ? "First Component button is clicked!" : "___________________________";
+    this.appMessageToFirst = event ? "___________________________" : "First Component button is clicked!";
   }
+
+  // show third, hide first
+  appMethodFromThird(event : any) {
+    // console.log(this.appMessageToFirst);
+    // console.log(this.appMessageToThird);
+    this.appMessageToFirst = event ? "Third Component button is clicked!" : "___________________________";
+    this.appMessageToThird = event ? "___________________________" : "Third Component button is clicked!";
+  }  
 }

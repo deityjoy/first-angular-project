@@ -1,23 +1,19 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-@Component({
+@Component ({
   selector: 'app-first',
   templateUrl: './first.component.html',
   styleUrls: ['./first.component.css']
 })
-export class FirstComponent implements OnInit {
 
-  @Input() firstInput = "";
+export class FirstComponent implements OnInit {
+  @Input() firstInput : any;
   @Output() firstOutput = new EventEmitter();
-  // toDisplay = true;
 
   constructor() { }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {    
-  }
-
-  appMethodFromFirst(){
-      this.firstOutput.emit();
-    // this.toDisplay = !this.toDisplay; 
+  firstMethod() {
+    this.firstOutput.emit();
   }
 }

@@ -1,21 +1,19 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-@Component({
+@Component ({
   selector: 'app-third',
   templateUrl: './third.component.html',
   styleUrls: ['./third.component.css']
 })
-export class ThirdComponent implements OnInit {
 
-  @Input() thirdInput = "";
+export class ThirdComponent implements OnInit {
+  @Input() thirdInput : any;
   @Output() thirdOutput = new EventEmitter();
 
   constructor() { }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
-  }
-
-  appMethodFromThird(){
-    this.thirdOutput.emit('Third Component button clicked!');
+  thirdMethod() {
+    this.thirdOutput.emit();
   }
 }
